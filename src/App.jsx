@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Themes from "./Components/Themes/Themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
 const About = lazy(() => import("./pages/About/About.jsx"));
 const Portfolio = lazy(() => import("./pages/Portfolio/Portfolio.jsx"));
@@ -29,6 +30,7 @@ function App() {
           <Route path="/resume" Component={Resume} />
         </Routes>
       </Suspense>
+      <Analytics />
     </BrowserRouter>
   );
 }
